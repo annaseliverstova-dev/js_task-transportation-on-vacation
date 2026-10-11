@@ -16,24 +16,21 @@ function calculateRentalCost(days) {
     (additionalDiscountAmont ? additionalDiscount : 0);
 
   if (days === 1) {
-    return 50;
+    return days * baseCost;
   }
 
   if (days === 2) {
-    return 80;
+    return days * baseCost;
   }
 
   if (days >= 3 && days <= 6) {
-    return 100 + (days - 3) * 40;
+    return days * 40 - 20;
   }
 
   if (days >= 7) {
     return days * 40 - 50;
   }
 
-  if (days < 0) {
-    return 0;
-  }
   return finalCost; // write code here
 }
 
