@@ -15,20 +15,16 @@ function calculateRentalCost(days) {
     (discountAmount ? discount * baseCost : 0) -
     (additionalDiscountAmont ? additionalDiscount : 0);
 
-  if (days === 1) {
-    return days * baseCost;
-  }
-
-  if (days === 2) {
+  if (days <= 2) {
     return days * baseCost;
   }
 
   if (days >= 3 && days <= 6) {
-    return days * 40 - 20;
+    return days * baseCost - additionalDiscount;
   }
 
   if (days >= 7) {
-    return days * 40 - 50;
+    return days * baseCost - 50;
   }
 
   return finalCost; // write code here
